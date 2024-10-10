@@ -3,6 +3,10 @@ CFLAGS  =  -Wall -O2 -fomit-frame-pointer
 LDFLAGS = -s
 LDLIBS  = -ltiniconv -lldg
 
+#
+# create manualy ./build/68000/ and ./build/68020/ and ./build/ColdFire/ folder for the targets to be placed.
+#
+
 TARGET = tiniconv.ldg
 
 # list header files here
