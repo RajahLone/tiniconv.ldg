@@ -14,9 +14,9 @@ Please read the how-to and functions calls and test program.
    ```mkdir ./build/ColfFire```  
 
 - get [tiniconv_r1_src.zip](https://ptonthat.fr/files/tiniconv/tiniconv_r1_src.zip) and unpack the contents of /tiniconv.ldg/ to
-   ```./README.md  
-   ./Makefile  
-   ./main.c  
-   ./tiniconv.ldg.xcodeproj```  
+   ```./README.md```  
+   ```./Makefile```  
+   ```./main.c```  
+   ```./tiniconv.ldg.xcodeproj```  
 
 - tiniconv.ldg.xcodeproj is for Xcode 16.0, you may not need it if you use something else.
