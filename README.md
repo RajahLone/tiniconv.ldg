@@ -13,7 +13,7 @@ Please read the how-to and functions calls and test program.
    ```mkdir ./build/68020```  
    ```mkdir ./build/ColfFire```  
 
-- get [tiniconv_r1_src.zip](https://ptonthat.fr/files/tiniconv/tiniconv_r1_src.zip) and unpack the contents of /tiniconv.ldg/ to
+- get [tiniconv_r1_src.zip](https://ptonthat.fr/files/tiniconv/tiniconv_r1_src.zip) and unpack the contents of /tiniconv.ldg/ to  
    ```./README.md```  
    ```./Makefile```  
    ```./main.c```  
