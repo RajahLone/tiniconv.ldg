@@ -85,7 +85,7 @@ PROC LibFunc[] =
   {"tconv_conv", "int tconv_conv(struct tiniconv_ctx_s *ctx, unsigned char const *in_buf, int in_size, int *p_in_size_consumed, unsigned char *out_buf, int out_size, int *p_out_size_consumed);\n", tconv_conv},
 };
 
-LDGLIB LibLdg[] = { { 0x0001,  5, LibFunc,  "Charset conversions functions from modified tiniconv", 0} };
+LDGLIB LibLdg[] = { { 0x0002,  5, LibFunc,  "Charset conversions functions from modified tiniconv", 0} };
 
 /*  */
 

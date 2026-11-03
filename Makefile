@@ -1,11 +1,8 @@
+CMINI = ../libcmini/lib
 
-CFLAGS  =  -Wall -O2 -fomit-frame-pointer
-LDFLAGS = -s
-LDLIBS  = -ltiniconv -lldg
-
-#
-# create manualy ./build/68000/ and ./build/68020/ and ./build/ColdFire/ folder for the targets to be placed.
-#
+CFLAGS  = -Wall -O2 -fomit-frame-pointer
+LDFLAGS = -s -nostdlib $(CMINI)/crt0.o
+LDLIBS  = -L$(CMINI) -ltiniconv -lldg -lcmini -lgcc -lcmini
 
 TARGET = tiniconv.ldg
 
@@ -64,12 +61,16 @@ new: clean
 .SUFFIXES: .c .S .o
 
 .c.o:
+	mkdir -p ./build/68000
+	mkdir -p ./build/68020
+	mkdir -p ./build/ColdFire
+
 	$(CC) $(CFLAGS) -m68000 -c $*.c -o ./build/68000/$*.o
 	$(CC) $(CFLAGS) -m68020-60 -c $*.c -o ./build/68020/$*.o
 	$(CC) $(CFLAGS) -mcpu=5475 -c $*.c -o ./build/ColdFire/$*.o
 
 $(TARGET): $(OBJS)
-	$(CC) ./build/68000/$(OBJS) $(CFLAGS) -m68000 $(LDLIBS) -o ./build/68000/$(TARGET)
-	$(CC) ./build/68020/$(OBJS) $(CFLAGS) -m68020-60 $(LDLIBS) -o ./build/68020/$(TARGET)
-	$(CC) ./build/ColdFire/$(OBJS) $(CFLAGS) -mcpu=5475 $(LDLIBS) -o ./build/ColdFire/$(TARGET)
+	$(CC) $(LDFLAGS) ./build/68000/*.o -o ./build/68000/$(TARGET) -m68000 $(LDLIBS)
+	$(CC) $(LDFLAGS) ./build/68020/*.o -o ./build/68020/$(TARGET) -m68020-60 $(LDLIBS)
+	$(CC) $(LDFLAGS) ./build/ColdFire/*.o -o ./build/ColdFire/$(TARGET) -mcpu=5475 $(LDLIBS)
 

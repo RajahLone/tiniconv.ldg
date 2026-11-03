@@ -8,15 +8,8 @@ Please read the how-to and functions calls and test program.
 
 - pre-requisite: different targets of libtiniconv.a, libldg.a in /opt/cross-mint/m68k-atari-mint/lib/
 
-- in an empty folder,  
-   ```mkdir ./build/68000```  
-   ```mkdir ./build/68020```  
-   ```mkdir ./build/ColfFire```  
+- get [tiniconv_r2_src.zip](https://ptonthat.fr/files/tiniconv/tiniconv_r2_src.zip) and unpack the contents to ./
 
-- get [tiniconv_r1_src.zip](https://ptonthat.fr/files/tiniconv/tiniconv_r1_src.zip) and unpack the contents of /tiniconv.ldg/ to  
-   ```./README.md```  
-   ```./Makefile```  
-   ```./main.c```  
-   ```./tiniconv.ldg.xcodeproj```  
+- install [libcmini/lib/](https://github.com/freemint/libcmini/releases/) a files on a location outside /opt/cross-mint/m68k-atari-mint/lib/ (ie in your workspace besides other projects) and fix $CMINI path in the Makefile.
 
-- tiniconv.ldg.xcodeproj is for Xcode 16.0, you may not need it if you use something else.
+- tiniconv.ldg.xcodeproj is for Xcode 26.3, you may not need it if you use something else.
